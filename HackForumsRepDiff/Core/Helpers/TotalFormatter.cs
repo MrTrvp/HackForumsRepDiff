@@ -10,8 +10,10 @@ namespace HackForumsRepDiff.Core.Helpers
 
         public static string FormatTotal(IEnumerable<Reputation> reputations, TransactionType type)
         {
-            var count = reputations.Count();
-            var sum = reputations.Select(r => r.Number).Sum();
+            var reputationArray = reputations.ToArray();
+
+            var count = reputationArray.Count();
+            var sum = reputationArray.Select(r => r.Number).Sum();
 
             return FormatTotal(type, count, sum);
         }
