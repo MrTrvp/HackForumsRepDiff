@@ -30,20 +30,18 @@ namespace HackForumsRepDiff.UI.Forms
                 var files = Directory.GetFiles(dialog.SelectedPath, "*", SearchOption.AllDirectories).
                     Where(f => Config.AllowedFileTypes.Any(f.EndsWith)).ToList();
 
-
                 files.Sort(new NumericComparer());
-
                 InvalidateReputationsFromFiles(files);
             }
         }
 
         private void tsmiRemove_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in lvLoadedDocuments.SelectedItems)
+            foreach (PageViewItem item in lvLoadedDocuments.SelectedItems)
                 lvLoadedDocuments.Items.Remove(item);
 
             var files = lvLoadedDocuments.Items.Cast<PageViewItem>().Select(p => p.Text);
-            InvalidateReputationsFromFiles(files);
+            InvalidateReputationsFromFiles(files.ToArray());
         }
 
         public void InvalidateReputationsFromFiles(IEnumerable<string> files)

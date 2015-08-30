@@ -69,13 +69,13 @@
             this.tsmiAdd,
             this.tsmiRemove});
             this.cmsLoadedDocuments.Name = "cmsLoadedDocuments";
-            this.cmsLoadedDocuments.Size = new System.Drawing.Size(153, 70);
+            this.cmsLoadedDocuments.Size = new System.Drawing.Size(118, 48);
             // 
             // tsmiAdd
             // 
             this.tsmiAdd.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
             this.tsmiAdd.Name = "tsmiAdd";
-            this.tsmiAdd.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAdd.Size = new System.Drawing.Size(117, 22);
             this.tsmiAdd.Text = "Add";
             this.tsmiAdd.Click += new System.EventHandler(this.tsmiAdd_Click);
             // 
@@ -83,7 +83,7 @@
             // 
             this.tsmiRemove.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
             this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(152, 22);
+            this.tsmiRemove.Size = new System.Drawing.Size(117, 22);
             this.tsmiRemove.Text = "Remove";
             this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
             // 
@@ -108,7 +108,7 @@
             // chUsernameG
             // 
             this.chUsernameG.Text = "Username";
-            this.chUsernameG.Width = 130;
+            this.chUsernameG.Width = 132;
             // 
             // chNumberG
             // 
@@ -123,7 +123,7 @@
             // chTimeG
             // 
             this.chTimeG.Text = "Time";
-            this.chTimeG.Width = 81;
+            this.chTimeG.Width = 86;
             // 
             // lvReceived
             // 
@@ -146,7 +146,7 @@
             // chUsernameR
             // 
             this.chUsernameR.Text = "Username";
-            this.chUsernameR.Width = 130;
+            this.chUsernameR.Width = 132;
             // 
             // chNumberR
             // 
@@ -161,12 +161,12 @@
             // chTimeR
             // 
             this.chTimeR.Text = "Time";
-            this.chTimeR.Width = 81;
+            this.chTimeR.Width = 86;
             // 
             // chUsernameD
             // 
             this.chUsernameD.Text = "Username";
-            this.chUsernameD.Width = 130;
+            this.chUsernameD.Width = 132;
             // 
             // chNumberD
             // 
@@ -181,7 +181,7 @@
             // chTimeD
             // 
             this.chTimeD.Text = "Time";
-            this.chTimeD.Width = 81;
+            this.chTimeD.Width = 86;
             // 
             // lvDifference
             // 
@@ -252,7 +252,7 @@
             // chType
             // 
             this.chType.Text = "Type";
-            this.chType.Width = 97;
+            this.chType.Width = 101;
             // 
             // tpGiven
             // 
