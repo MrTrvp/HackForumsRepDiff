@@ -30,6 +30,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cmsLoadedDocuments = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpDocuments = new System.Windows.Forms.TabPage();
             this.lbTotalFiles = new System.Windows.Forms.Label();
@@ -37,12 +39,10 @@
             this.chPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpGiven = new System.Windows.Forms.TabPage();
-            this.tpReceived = new System.Windows.Forms.TabPage();
-            this.tpDifference = new System.Windows.Forms.TabPage();
-            this.tsmiAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.rcGiven = new HackForumsRepDiff.UI.Controls.ReputationContainer();
+            this.tpReceived = new System.Windows.Forms.TabPage();
             this.rcReceived = new HackForumsRepDiff.UI.Controls.ReputationContainer();
+            this.tpDifference = new System.Windows.Forms.TabPage();
             this.rcDifference = new HackForumsRepDiff.UI.Controls.ReputationContainer();
             this.cmsLoadedDocuments.SuspendLayout();
             this.tcMain.SuspendLayout();
@@ -59,6 +59,22 @@
             this.tsmiRemove});
             this.cmsLoadedDocuments.Name = "cmsLoadedDocuments";
             this.cmsLoadedDocuments.Size = new System.Drawing.Size(118, 48);
+            // 
+            // tsmiAdd
+            // 
+            this.tsmiAdd.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
+            this.tsmiAdd.Name = "tsmiAdd";
+            this.tsmiAdd.Size = new System.Drawing.Size(117, 22);
+            this.tsmiAdd.Text = "Add";
+            this.tsmiAdd.Click += new System.EventHandler(this.tsmiAdd_Click);
+            // 
+            // tsmiRemove
+            // 
+            this.tsmiRemove.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
+            this.tsmiRemove.Name = "tsmiRemove";
+            this.tsmiRemove.Size = new System.Drawing.Size(117, 22);
+            this.tsmiRemove.Text = "Remove";
+            this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
             // 
             // tcMain
             // 
@@ -135,44 +151,6 @@
             this.tpGiven.Text = "Given";
             this.tpGiven.UseVisualStyleBackColor = true;
             // 
-            // tpReceived
-            // 
-            this.tpReceived.Controls.Add(this.rcReceived);
-            this.tpReceived.Location = new System.Drawing.Point(4, 22);
-            this.tpReceived.Name = "tpReceived";
-            this.tpReceived.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReceived.Size = new System.Drawing.Size(562, 251);
-            this.tpReceived.TabIndex = 1;
-            this.tpReceived.Text = "Received";
-            this.tpReceived.UseVisualStyleBackColor = true;
-            // 
-            // tpDifference
-            // 
-            this.tpDifference.Controls.Add(this.rcDifference);
-            this.tpDifference.Location = new System.Drawing.Point(4, 22);
-            this.tpDifference.Name = "tpDifference";
-            this.tpDifference.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDifference.Size = new System.Drawing.Size(562, 251);
-            this.tpDifference.TabIndex = 2;
-            this.tpDifference.Text = "Difference";
-            this.tpDifference.UseVisualStyleBackColor = true;
-            // 
-            // tsmiAdd
-            // 
-            this.tsmiAdd.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
-            this.tsmiAdd.Name = "tsmiAdd";
-            this.tsmiAdd.Size = new System.Drawing.Size(117, 22);
-            this.tsmiAdd.Text = "Add";
-            this.tsmiAdd.Click += new System.EventHandler(this.tsmiAdd_Click);
-            // 
-            // tsmiRemove
-            // 
-            this.tsmiRemove.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
-            this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(117, 22);
-            this.tsmiRemove.Text = "Remove";
-            this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
-            // 
             // rcGiven
             // 
             this.rcGiven.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -186,6 +164,17 @@
             this.rcGiven.TabIndex = 2;
             this.rcGiven.Type = HackForumsRepDiff.Core.Models.TransactionType.Given;
             // 
+            // tpReceived
+            // 
+            this.tpReceived.Controls.Add(this.rcReceived);
+            this.tpReceived.Location = new System.Drawing.Point(4, 22);
+            this.tpReceived.Name = "tpReceived";
+            this.tpReceived.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReceived.Size = new System.Drawing.Size(562, 251);
+            this.tpReceived.TabIndex = 1;
+            this.tpReceived.Text = "Received";
+            this.tpReceived.UseVisualStyleBackColor = true;
+            // 
             // rcReceived
             // 
             this.rcReceived.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -198,6 +187,17 @@
             this.rcReceived.Size = new System.Drawing.Size(562, 251);
             this.rcReceived.TabIndex = 1;
             this.rcReceived.Type = HackForumsRepDiff.Core.Models.TransactionType.Received;
+            // 
+            // tpDifference
+            // 
+            this.tpDifference.Controls.Add(this.rcDifference);
+            this.tpDifference.Location = new System.Drawing.Point(4, 22);
+            this.tpDifference.Name = "tpDifference";
+            this.tpDifference.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDifference.Size = new System.Drawing.Size(562, 251);
+            this.tpDifference.TabIndex = 2;
+            this.tpDifference.Text = "Difference";
+            this.tpDifference.UseVisualStyleBackColor = true;
             // 
             // rcDifference
             // 
