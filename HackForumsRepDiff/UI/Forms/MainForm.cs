@@ -17,7 +17,7 @@ namespace HackForumsRepDiff.UI.Forms
             InitializeComponent();
         }
 
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiAdd_Click(object sender, EventArgs e)
         {
             using (var dialog = new FolderBrowserDialog
             {
@@ -28,16 +28,16 @@ namespace HackForumsRepDiff.UI.Forms
                     return;
 
                 var files = Directory.GetFiles(dialog.SelectedPath, "*", SearchOption.AllDirectories).
-                      Where(f => Config.AllowedFileTypes.Any(f.EndsWith)).ToList();
+                    Where(f => Config.AllowedFileTypes.Any(f.EndsWith)).ToList();
 
 
                 files.Sort(new NumericComparer());
-                
+
                 InvalidateReputationsFromFiles(files);
             }
         }
 
-        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiRemove_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in lvLoadedDocuments.SelectedItems)
                 lvLoadedDocuments.Items.Remove(item);

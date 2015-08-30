@@ -30,8 +30,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cmsLoadedDocuments = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.lvGiven = new System.Windows.Forms.ListView();
             this.chUsernameG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chNumberG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,26 +66,26 @@
             // cmsLoadedDocuments
             // 
             this.cmsLoadedDocuments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem});
+            this.tsmiAdd,
+            this.tsmiRemove});
             this.cmsLoadedDocuments.Name = "cmsLoadedDocuments";
-            this.cmsLoadedDocuments.Size = new System.Drawing.Size(118, 48);
+            this.cmsLoadedDocuments.Size = new System.Drawing.Size(153, 70);
             // 
-            // addToolStripMenuItem
+            // tsmiAdd
             // 
-            this.addToolStripMenuItem.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            this.tsmiAdd.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
+            this.tsmiAdd.Name = "tsmiAdd";
+            this.tsmiAdd.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAdd.Text = "Add";
+            this.tsmiAdd.Click += new System.EventHandler(this.tsmiAdd_Click);
             // 
-            // removeToolStripMenuItem
+            // tsmiRemove
             // 
-            this.removeToolStripMenuItem.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            this.tsmiRemove.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
+            this.tsmiRemove.Name = "tsmiRemove";
+            this.tsmiRemove.Size = new System.Drawing.Size(152, 22);
+            this.tsmiRemove.Text = "Remove";
+            this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
             // 
             // lvGiven
             // 
@@ -310,8 +310,8 @@
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip cmsLoadedDocuments;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAdd;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRemove;
         private System.Windows.Forms.ListView lvGiven;
         private System.Windows.Forms.ListView lvReceived;
         private System.Windows.Forms.ListView lvDifference;
