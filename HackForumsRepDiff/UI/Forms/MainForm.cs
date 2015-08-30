@@ -51,9 +51,9 @@ namespace HackForumsRepDiff.UI.Forms
             lvReceived.Items.Clear();
             lvDifference.Items.Clear();
 
-            lbGiven.Text = TotalFormatter.FormatTotal(TransactionType.Given);
-            lbReceived.Text = TotalFormatter.FormatTotal(TransactionType.Received);
-            lbDifference.Text = TotalFormatter.FormatTotal(TransactionType.Difference);
+            lbTotalGiven.Text = TotalFormatter.FormatTotal(TransactionType.Given);
+            lbTotalReceived.Text = TotalFormatter.FormatTotal(TransactionType.Received);
+            lbTotalDifference.Text = TotalFormatter.FormatTotal(TransactionType.Difference);
 
             var parsed = files.
                 Select(f => PageParser.Parse(f, PageReadType.FromFile));
@@ -85,9 +85,10 @@ namespace HackForumsRepDiff.UI.Forms
             var difference = Differentiator.Differenciate(given, received).ToArray();
             lvDifference.Items.AddRange(difference.ToReputationViewItems());
 
-            lbGiven.Text = TotalFormatter.FormatTotal(given, TransactionType.Given);
-            lbReceived.Text = TotalFormatter.FormatTotal(received, TransactionType.Received);
-            lbDifference.Text = TotalFormatter.FormatTotal(difference, TransactionType.Difference);
+            lbTotalFiles.Text = string.Concat(@"Total Files: ", lvLoadedDocuments.Items.Count);
+            lbTotalGiven.Text = TotalFormatter.FormatTotal(given, TransactionType.Given);
+            lbTotalReceived.Text = TotalFormatter.FormatTotal(received, TransactionType.Received);
+            lbTotalDifference.Text = TotalFormatter.FormatTotal(difference, TransactionType.Difference);
         }
     }
 }

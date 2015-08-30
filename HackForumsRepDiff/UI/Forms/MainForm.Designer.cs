@@ -55,9 +55,10 @@
             this.tpGiven = new System.Windows.Forms.TabPage();
             this.tpReceived = new System.Windows.Forms.TabPage();
             this.tpDifference = new System.Windows.Forms.TabPage();
-            this.lbGiven = new System.Windows.Forms.Label();
-            this.lbReceived = new System.Windows.Forms.Label();
-            this.lbDifference = new System.Windows.Forms.Label();
+            this.lbTotalGiven = new System.Windows.Forms.Label();
+            this.lbTotalReceived = new System.Windows.Forms.Label();
+            this.lbTotalDifference = new System.Windows.Forms.Label();
+            this.lbTotalFiles = new System.Windows.Forms.Label();
             this.cmsLoadedDocuments.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpDocuments.SuspendLayout();
@@ -221,6 +222,7 @@
             // 
             // tpDocuments
             // 
+            this.tpDocuments.Controls.Add(this.lbTotalFiles);
             this.tpDocuments.Controls.Add(this.lvLoadedDocuments);
             this.tpDocuments.Location = new System.Drawing.Point(4, 22);
             this.tpDocuments.Name = "tpDocuments";
@@ -242,7 +244,7 @@
             this.lvLoadedDocuments.FullRowSelect = true;
             this.lvLoadedDocuments.Location = new System.Drawing.Point(3, 3);
             this.lvLoadedDocuments.Name = "lvLoadedDocuments";
-            this.lvLoadedDocuments.Size = new System.Drawing.Size(556, 245);
+            this.lvLoadedDocuments.Size = new System.Drawing.Size(556, 226);
             this.lvLoadedDocuments.TabIndex = 8;
             this.lvLoadedDocuments.UseCompatibleStateImageBehavior = false;
             this.lvLoadedDocuments.View = System.Windows.Forms.View.Details;
@@ -259,7 +261,7 @@
             // 
             // tpGiven
             // 
-            this.tpGiven.Controls.Add(this.lbGiven);
+            this.tpGiven.Controls.Add(this.lbTotalGiven);
             this.tpGiven.Controls.Add(this.lvGiven);
             this.tpGiven.Location = new System.Drawing.Point(4, 22);
             this.tpGiven.Name = "tpGiven";
@@ -271,7 +273,7 @@
             // 
             // tpReceived
             // 
-            this.tpReceived.Controls.Add(this.lbReceived);
+            this.tpReceived.Controls.Add(this.lbTotalReceived);
             this.tpReceived.Controls.Add(this.lvReceived);
             this.tpReceived.Location = new System.Drawing.Point(4, 22);
             this.tpReceived.Name = "tpReceived";
@@ -283,7 +285,7 @@
             // 
             // tpDifference
             // 
-            this.tpDifference.Controls.Add(this.lbDifference);
+            this.tpDifference.Controls.Add(this.lbTotalDifference);
             this.tpDifference.Controls.Add(this.lvDifference);
             this.tpDifference.Location = new System.Drawing.Point(4, 22);
             this.tpDifference.Name = "tpDifference";
@@ -293,32 +295,46 @@
             this.tpDifference.Text = "Difference";
             this.tpDifference.UseVisualStyleBackColor = true;
             // 
-            // lbGiven
+            // lbTotalGiven
             // 
-            this.lbGiven.AutoSize = true;
-            this.lbGiven.Location = new System.Drawing.Point(3, 233);
-            this.lbGiven.Name = "lbGiven";
-            this.lbGiven.Size = new System.Drawing.Size(218, 13);
-            this.lbGiven.TabIndex = 4;
-            this.lbGiven.Text = "Total Given Count: 0 - Total Given: 0";
+            this.lbTotalGiven.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTotalGiven.AutoSize = true;
+            this.lbTotalGiven.Location = new System.Drawing.Point(3, 233);
+            this.lbTotalGiven.Name = "lbTotalGiven";
+            this.lbTotalGiven.Size = new System.Drawing.Size(218, 13);
+            this.lbTotalGiven.TabIndex = 4;
+            this.lbTotalGiven.Text = "Total Given Count: 0 - Total Given: 0";
             // 
-            // lbReceived
+            // lbTotalReceived
             // 
-            this.lbReceived.AutoSize = true;
-            this.lbReceived.Location = new System.Drawing.Point(3, 233);
-            this.lbReceived.Name = "lbReceived";
-            this.lbReceived.Size = new System.Drawing.Size(256, 13);
-            this.lbReceived.TabIndex = 5;
-            this.lbReceived.Text = "Total Received Count: 0 - Total Received: 0";
+            this.lbTotalReceived.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTotalReceived.AutoSize = true;
+            this.lbTotalReceived.Location = new System.Drawing.Point(3, 233);
+            this.lbTotalReceived.Name = "lbTotalReceived";
+            this.lbTotalReceived.Size = new System.Drawing.Size(256, 13);
+            this.lbTotalReceived.TabIndex = 5;
+            this.lbTotalReceived.Text = "Total Received Count: 0 - Total Received: 0";
             // 
-            // lbDifference
+            // lbTotalDifference
             // 
-            this.lbDifference.AutoSize = true;
-            this.lbDifference.Location = new System.Drawing.Point(3, 233);
-            this.lbDifference.Name = "lbDifference";
-            this.lbDifference.Size = new System.Drawing.Size(270, 13);
-            this.lbDifference.TabIndex = 6;
-            this.lbDifference.Text = "Total Difference Count: 0 - Total Difference: 0";
+            this.lbTotalDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTotalDifference.AutoSize = true;
+            this.lbTotalDifference.Location = new System.Drawing.Point(3, 233);
+            this.lbTotalDifference.Name = "lbTotalDifference";
+            this.lbTotalDifference.Size = new System.Drawing.Size(270, 13);
+            this.lbTotalDifference.TabIndex = 6;
+            this.lbTotalDifference.Text = "Total Difference Count: 0 - Total Difference: 0";
+            // 
+            // lbTotalFiles
+            // 
+            this.lbTotalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTotalFiles.AutoSize = true;
+            this.lbTotalFiles.Location = new System.Drawing.Point(3, 233);
+            this.lbTotalFiles.Name = "lbTotalFiles";
+            this.lbTotalFiles.Size = new System.Drawing.Size(79, 13);
+            this.lbTotalFiles.TabIndex = 9;
+            this.lbTotalFiles.Text = "Total Files: 0";
             // 
             // MainForm
             // 
@@ -333,6 +349,7 @@
             this.cmsLoadedDocuments.ResumeLayout(false);
             this.tcMain.ResumeLayout(false);
             this.tpDocuments.ResumeLayout(false);
+            this.tpDocuments.PerformLayout();
             this.tpGiven.ResumeLayout(false);
             this.tpGiven.PerformLayout();
             this.tpReceived.ResumeLayout(false);
@@ -371,8 +388,9 @@
         private System.Windows.Forms.ListView lvLoadedDocuments;
         private System.Windows.Forms.ColumnHeader chPath;
         private System.Windows.Forms.ColumnHeader chType;
-        private System.Windows.Forms.Label lbGiven;
-        private System.Windows.Forms.Label lbReceived;
-        private System.Windows.Forms.Label lbDifference;
+        private System.Windows.Forms.Label lbTotalGiven;
+        private System.Windows.Forms.Label lbTotalReceived;
+        private System.Windows.Forms.Label lbTotalDifference;
+        private System.Windows.Forms.Label lbTotalFiles;
     }
 }
