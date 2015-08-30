@@ -56,7 +56,7 @@
     <Compile Include="Core\Extensions\ReputationArrayExtensions.cs" />
     <Compile Include="Core\Helpers\Differentiator.cs" />
     <Compile Include="Core\Helpers\PageParser.cs" />
-    <Compile Include="Core\Helpers\CustomComparer.cs" />
+    <Compile Include="Core\Helpers\NumericComparer.cs" />
     <Compile Include="Core\Models\Page.cs" />
     <Compile Include="Core\Models\Reputation.cs" />
     <Compile Include="Program.cs" />
