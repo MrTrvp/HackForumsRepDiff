@@ -43,7 +43,7 @@ namespace HackForumsRepDiff.Core.Helpers
             if (source.Contains("Total Reputation"))
                 return TransactionType.Received;
 
-            return TransactionType.Unknown;;
+            return TransactionType.Unknown;
         }
 
         private static Reputation[] ParseReputations(string source)

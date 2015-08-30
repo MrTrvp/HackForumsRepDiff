@@ -30,35 +30,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cmsLoadedDocuments = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvGiven = new System.Windows.Forms.ListView();
-            this.chUsernameG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNumberG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCommentG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chTimeG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvReceived = new System.Windows.Forms.ListView();
-            this.chUsernameR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNumberR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCommentR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chTimeR = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chUsernameD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNumberD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCommentD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chTimeD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvDifference = new System.Windows.Forms.ListView();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpDocuments = new System.Windows.Forms.TabPage();
+            this.lbTotalFiles = new System.Windows.Forms.Label();
             this.lvLoadedDocuments = new System.Windows.Forms.ListView();
             this.chPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpGiven = new System.Windows.Forms.TabPage();
             this.tpReceived = new System.Windows.Forms.TabPage();
             this.tpDifference = new System.Windows.Forms.TabPage();
-            this.lbTotalGiven = new System.Windows.Forms.Label();
-            this.lbTotalReceived = new System.Windows.Forms.Label();
-            this.lbTotalDifference = new System.Windows.Forms.Label();
-            this.lbTotalFiles = new System.Windows.Forms.Label();
+            this.tsmiAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.rcGiven = new HackForumsRepDiff.UI.Controls.ReputationContainer();
+            this.rcReceived = new HackForumsRepDiff.UI.Controls.ReputationContainer();
+            this.rcDifference = new HackForumsRepDiff.UI.Controls.ReputationContainer();
             this.cmsLoadedDocuments.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpDocuments.SuspendLayout();
@@ -74,136 +59,6 @@
             this.tsmiRemove});
             this.cmsLoadedDocuments.Name = "cmsLoadedDocuments";
             this.cmsLoadedDocuments.Size = new System.Drawing.Size(118, 48);
-            // 
-            // tsmiAdd
-            // 
-            this.tsmiAdd.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
-            this.tsmiAdd.Name = "tsmiAdd";
-            this.tsmiAdd.Size = new System.Drawing.Size(117, 22);
-            this.tsmiAdd.Text = "Add";
-            this.tsmiAdd.Click += new System.EventHandler(this.tsmiAdd_Click);
-            // 
-            // tsmiRemove
-            // 
-            this.tsmiRemove.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
-            this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(117, 22);
-            this.tsmiRemove.Text = "Remove";
-            this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
-            // 
-            // lvGiven
-            // 
-            this.lvGiven.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvGiven.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUsernameG,
-            this.chNumberG,
-            this.chCommentG,
-            this.chTimeG});
-            this.lvGiven.FullRowSelect = true;
-            this.lvGiven.Location = new System.Drawing.Point(3, 3);
-            this.lvGiven.Name = "lvGiven";
-            this.lvGiven.Size = new System.Drawing.Size(556, 226);
-            this.lvGiven.TabIndex = 3;
-            this.lvGiven.UseCompatibleStateImageBehavior = false;
-            this.lvGiven.View = System.Windows.Forms.View.Details;
-            // 
-            // chUsernameG
-            // 
-            this.chUsernameG.Text = "Username";
-            this.chUsernameG.Width = 132;
-            // 
-            // chNumberG
-            // 
-            this.chNumberG.Text = "Number";
-            this.chNumberG.Width = 78;
-            // 
-            // chCommentG
-            // 
-            this.chCommentG.Text = "Comment";
-            this.chCommentG.Width = 236;
-            // 
-            // chTimeG
-            // 
-            this.chTimeG.Text = "Time";
-            this.chTimeG.Width = 86;
-            // 
-            // lvReceived
-            // 
-            this.lvReceived.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvReceived.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUsernameR,
-            this.chNumberR,
-            this.chCommentR,
-            this.chTimeR});
-            this.lvReceived.FullRowSelect = true;
-            this.lvReceived.Location = new System.Drawing.Point(3, 3);
-            this.lvReceived.Name = "lvReceived";
-            this.lvReceived.Size = new System.Drawing.Size(556, 226);
-            this.lvReceived.TabIndex = 3;
-            this.lvReceived.UseCompatibleStateImageBehavior = false;
-            this.lvReceived.View = System.Windows.Forms.View.Details;
-            // 
-            // chUsernameR
-            // 
-            this.chUsernameR.Text = "Username";
-            this.chUsernameR.Width = 132;
-            // 
-            // chNumberR
-            // 
-            this.chNumberR.Text = "Number";
-            this.chNumberR.Width = 78;
-            // 
-            // chCommentR
-            // 
-            this.chCommentR.Text = "Comment";
-            this.chCommentR.Width = 236;
-            // 
-            // chTimeR
-            // 
-            this.chTimeR.Text = "Time";
-            this.chTimeR.Width = 86;
-            // 
-            // chUsernameD
-            // 
-            this.chUsernameD.Text = "Username";
-            this.chUsernameD.Width = 132;
-            // 
-            // chNumberD
-            // 
-            this.chNumberD.Text = "Number";
-            this.chNumberD.Width = 78;
-            // 
-            // chCommentD
-            // 
-            this.chCommentD.Text = "Comment";
-            this.chCommentD.Width = 236;
-            // 
-            // chTimeD
-            // 
-            this.chTimeD.Text = "Time";
-            this.chTimeD.Width = 86;
-            // 
-            // lvDifference
-            // 
-            this.lvDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvDifference.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUsernameD,
-            this.chNumberD,
-            this.chCommentD,
-            this.chTimeD});
-            this.lvDifference.FullRowSelect = true;
-            this.lvDifference.Location = new System.Drawing.Point(3, 3);
-            this.lvDifference.Name = "lvDifference";
-            this.lvDifference.Size = new System.Drawing.Size(556, 226);
-            this.lvDifference.TabIndex = 3;
-            this.lvDifference.UseCompatibleStateImageBehavior = false;
-            this.lvDifference.View = System.Windows.Forms.View.Details;
             // 
             // tcMain
             // 
@@ -231,6 +86,16 @@
             this.tpDocuments.TabIndex = 3;
             this.tpDocuments.Text = "Documents";
             this.tpDocuments.UseVisualStyleBackColor = true;
+            // 
+            // lbTotalFiles
+            // 
+            this.lbTotalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTotalFiles.AutoSize = true;
+            this.lbTotalFiles.Location = new System.Drawing.Point(3, 233);
+            this.lbTotalFiles.Name = "lbTotalFiles";
+            this.lbTotalFiles.Size = new System.Drawing.Size(79, 13);
+            this.lbTotalFiles.TabIndex = 9;
+            this.lbTotalFiles.Text = "Total Files: 0";
             // 
             // lvLoadedDocuments
             // 
@@ -261,8 +126,7 @@
             // 
             // tpGiven
             // 
-            this.tpGiven.Controls.Add(this.lbTotalGiven);
-            this.tpGiven.Controls.Add(this.lvGiven);
+            this.tpGiven.Controls.Add(this.rcGiven);
             this.tpGiven.Location = new System.Drawing.Point(4, 22);
             this.tpGiven.Name = "tpGiven";
             this.tpGiven.Padding = new System.Windows.Forms.Padding(3);
@@ -273,8 +137,7 @@
             // 
             // tpReceived
             // 
-            this.tpReceived.Controls.Add(this.lbTotalReceived);
-            this.tpReceived.Controls.Add(this.lvReceived);
+            this.tpReceived.Controls.Add(this.rcReceived);
             this.tpReceived.Location = new System.Drawing.Point(4, 22);
             this.tpReceived.Name = "tpReceived";
             this.tpReceived.Padding = new System.Windows.Forms.Padding(3);
@@ -285,8 +148,7 @@
             // 
             // tpDifference
             // 
-            this.tpDifference.Controls.Add(this.lbTotalDifference);
-            this.tpDifference.Controls.Add(this.lvDifference);
+            this.tpDifference.Controls.Add(this.rcDifference);
             this.tpDifference.Location = new System.Drawing.Point(4, 22);
             this.tpDifference.Name = "tpDifference";
             this.tpDifference.Padding = new System.Windows.Forms.Padding(3);
@@ -295,46 +157,60 @@
             this.tpDifference.Text = "Difference";
             this.tpDifference.UseVisualStyleBackColor = true;
             // 
-            // lbTotalGiven
+            // tsmiAdd
             // 
-            this.lbTotalGiven.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbTotalGiven.AutoSize = true;
-            this.lbTotalGiven.Location = new System.Drawing.Point(3, 233);
-            this.lbTotalGiven.Name = "lbTotalGiven";
-            this.lbTotalGiven.Size = new System.Drawing.Size(218, 13);
-            this.lbTotalGiven.TabIndex = 4;
-            this.lbTotalGiven.Text = "Total Given Count: 0 - Total Given: 0";
+            this.tsmiAdd.Image = global::HackForumsRepDiff.Properties.Resources.page_add;
+            this.tsmiAdd.Name = "tsmiAdd";
+            this.tsmiAdd.Size = new System.Drawing.Size(117, 22);
+            this.tsmiAdd.Text = "Add";
+            this.tsmiAdd.Click += new System.EventHandler(this.tsmiAdd_Click);
             // 
-            // lbTotalReceived
+            // tsmiRemove
             // 
-            this.lbTotalReceived.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbTotalReceived.AutoSize = true;
-            this.lbTotalReceived.Location = new System.Drawing.Point(3, 233);
-            this.lbTotalReceived.Name = "lbTotalReceived";
-            this.lbTotalReceived.Size = new System.Drawing.Size(256, 13);
-            this.lbTotalReceived.TabIndex = 5;
-            this.lbTotalReceived.Text = "Total Received Count: 0 - Total Received: 0";
+            this.tsmiRemove.Image = global::HackForumsRepDiff.Properties.Resources.page_delete;
+            this.tsmiRemove.Name = "tsmiRemove";
+            this.tsmiRemove.Size = new System.Drawing.Size(117, 22);
+            this.tsmiRemove.Text = "Remove";
+            this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
             // 
-            // lbTotalDifference
+            // rcGiven
             // 
-            this.lbTotalDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbTotalDifference.AutoSize = true;
-            this.lbTotalDifference.Location = new System.Drawing.Point(3, 233);
-            this.lbTotalDifference.Name = "lbTotalDifference";
-            this.lbTotalDifference.Size = new System.Drawing.Size(270, 13);
-            this.lbTotalDifference.TabIndex = 6;
-            this.lbTotalDifference.Text = "Total Difference Count: 0 - Total Difference: 0";
+            this.rcGiven.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rcGiven.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.rcGiven.Location = new System.Drawing.Point(0, 0);
+            this.rcGiven.Name = "rcGiven";
+            this.rcGiven.Reputations = new HackForumsRepDiff.Core.Models.Reputation[0];
+            this.rcGiven.Size = new System.Drawing.Size(562, 251);
+            this.rcGiven.TabIndex = 2;
+            this.rcGiven.Type = HackForumsRepDiff.Core.Models.TransactionType.Given;
             // 
-            // lbTotalFiles
+            // rcReceived
             // 
-            this.lbTotalFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbTotalFiles.AutoSize = true;
-            this.lbTotalFiles.Location = new System.Drawing.Point(3, 233);
-            this.lbTotalFiles.Name = "lbTotalFiles";
-            this.lbTotalFiles.Size = new System.Drawing.Size(79, 13);
-            this.lbTotalFiles.TabIndex = 9;
-            this.lbTotalFiles.Text = "Total Files: 0";
+            this.rcReceived.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rcReceived.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.rcReceived.Location = new System.Drawing.Point(0, 0);
+            this.rcReceived.Name = "rcReceived";
+            this.rcReceived.Reputations = new HackForumsRepDiff.Core.Models.Reputation[0];
+            this.rcReceived.Size = new System.Drawing.Size(562, 251);
+            this.rcReceived.TabIndex = 1;
+            this.rcReceived.Type = HackForumsRepDiff.Core.Models.TransactionType.Received;
+            // 
+            // rcDifference
+            // 
+            this.rcDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rcDifference.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.rcDifference.Location = new System.Drawing.Point(0, 0);
+            this.rcDifference.Name = "rcDifference";
+            this.rcDifference.Reputations = new HackForumsRepDiff.Core.Models.Reputation[0];
+            this.rcDifference.Size = new System.Drawing.Size(562, 251);
+            this.rcDifference.TabIndex = 0;
+            this.rcDifference.Type = HackForumsRepDiff.Core.Models.TransactionType.Difference;
             // 
             // MainForm
             // 
@@ -351,11 +227,8 @@
             this.tpDocuments.ResumeLayout(false);
             this.tpDocuments.PerformLayout();
             this.tpGiven.ResumeLayout(false);
-            this.tpGiven.PerformLayout();
             this.tpReceived.ResumeLayout(false);
-            this.tpReceived.PerformLayout();
             this.tpDifference.ResumeLayout(false);
-            this.tpDifference.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -365,32 +238,17 @@
         private System.Windows.Forms.ContextMenuStrip cmsLoadedDocuments;
         private System.Windows.Forms.ToolStripMenuItem tsmiAdd;
         private System.Windows.Forms.ToolStripMenuItem tsmiRemove;
-        private System.Windows.Forms.ListView lvGiven;
-        private System.Windows.Forms.ListView lvReceived;
-        private System.Windows.Forms.ListView lvDifference;
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpDocuments;
         private System.Windows.Forms.TabPage tpGiven;
         private System.Windows.Forms.TabPage tpReceived;
         private System.Windows.Forms.TabPage tpDifference;
-        private System.Windows.Forms.ColumnHeader chUsernameG;
-        private System.Windows.Forms.ColumnHeader chNumberG;
-        private System.Windows.Forms.ColumnHeader chCommentG;
-        private System.Windows.Forms.ColumnHeader chTimeG;
-        private System.Windows.Forms.ColumnHeader chUsernameR;
-        private System.Windows.Forms.ColumnHeader chNumberR;
-        private System.Windows.Forms.ColumnHeader chCommentR;
-        private System.Windows.Forms.ColumnHeader chTimeR;
-        private System.Windows.Forms.ColumnHeader chUsernameD;
-        private System.Windows.Forms.ColumnHeader chNumberD;
-        private System.Windows.Forms.ColumnHeader chCommentD;
-        private System.Windows.Forms.ColumnHeader chTimeD;
         private System.Windows.Forms.ListView lvLoadedDocuments;
         private System.Windows.Forms.ColumnHeader chPath;
         private System.Windows.Forms.ColumnHeader chType;
-        private System.Windows.Forms.Label lbTotalGiven;
-        private System.Windows.Forms.Label lbTotalReceived;
-        private System.Windows.Forms.Label lbTotalDifference;
         private System.Windows.Forms.Label lbTotalFiles;
+        private Controls.ReputationContainer rcDifference;
+        private Controls.ReputationContainer rcReceived;
+        private Controls.ReputationContainer rcGiven;
     }
 }

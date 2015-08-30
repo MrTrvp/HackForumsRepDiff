@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using HackForumsRepDiff.Core.Extensions;
 using HackForumsRepDiff.Core.Helpers;
 using HackForumsRepDiff.Core.Models;
 using HackForumsRepDiff.UI.Controls;
@@ -47,19 +46,13 @@ namespace HackForumsRepDiff.UI.Forms
         public void InvalidateReputationsFromFiles(IEnumerable<string> files)
         {
             lvLoadedDocuments.Items.Clear();
-            lvGiven.Items.Clear();
-            lvReceived.Items.Clear();
-            lvDifference.Items.Clear();
-
-            lbTotalGiven.Text = TotalFormatter.FormatTotal(TransactionType.Given);
-            lbTotalReceived.Text = TotalFormatter.FormatTotal(TransactionType.Received);
-            lbTotalDifference.Text = TotalFormatter.FormatTotal(TransactionType.Difference);
+            lbTotalFiles.Text = TotalFormatter.FormatTotalFiles(0);
+            rcGiven.Clear();
+            rcReceived.Clear();
+            rcDifference.Clear();
 
             var parsed = files.
                 Select(f => PageParser.Parse(f, PageReadType.FromFile));
-
-            var given = new List<Reputation>();
-            var received = new List<Reputation>();
 
             foreach (var page in parsed)
             {
@@ -68,27 +61,19 @@ namespace HackForumsRepDiff.UI.Forms
 
                 lvLoadedDocuments.Items.Add(page.ToPageViewItem());
 
-                var reputations = page.Reputations.ToReputationViewItems();
                 switch (page.Type)
                 {
                     case TransactionType.Given:
-                        given.AddRange(page.Reputations);
-                        lvGiven.Items.AddRange(reputations);
+                        rcGiven.AddRange(page.Reputations);
                         break;
                     case TransactionType.Received:
-                        received.AddRange(page.Reputations);
-                        lvReceived.Items.AddRange(reputations);
+                        rcReceived.AddRange(page.Reputations);
                         break;
                 }
             }
 
-            var difference = Differentiator.Differenciate(given, received).ToArray();
-            lvDifference.Items.AddRange(difference.ToReputationViewItems());
-
-            lbTotalFiles.Text = string.Concat(@"Total Files: ", lvLoadedDocuments.Items.Count);
-            lbTotalGiven.Text = TotalFormatter.FormatTotal(given, TransactionType.Given);
-            lbTotalReceived.Text = TotalFormatter.FormatTotal(received, TransactionType.Received);
-            lbTotalDifference.Text = TotalFormatter.FormatTotal(difference, TransactionType.Difference);
+            rcDifference.AddRange(Differentiator.Differenciate(rcGiven.Reputations, rcReceived.Reputations).ToArray());
+            lbTotalFiles.Text = TotalFormatter.FormatTotalFiles(lvLoadedDocuments.Items.Count);
         }
     }
 }
