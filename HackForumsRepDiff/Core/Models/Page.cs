@@ -3,7 +3,7 @@ using HackForumsRepDiff.UI.Controls;
 
 namespace HackForumsRepDiff.Core.Models
 {
-    public enum TransactionType { Given, Received, Unknown }
+    public enum TransactionType { Given, Received, Difference, Unknown }
 
     public class Page
     {

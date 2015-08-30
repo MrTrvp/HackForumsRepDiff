@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="Core\Extensions\ReputationArrayExtensions.cs" />
+    <Compile Include="Core\Helpers\TotalFormatter.cs" />
     <Compile Include="Core\Helpers\Differentiator.cs" />
     <Compile Include="Core\Helpers\PageParser.cs" />
     <Compile Include="Core\Helpers\NumericComparer.cs" />
