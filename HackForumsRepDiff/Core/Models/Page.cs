@@ -23,7 +23,7 @@ namespace HackForumsRepDiff.Core.Models
             Reputations = reputations;
         }
 
-        public ListViewItem ToPageViewItem()
+        public PageViewItem ToPageViewItem()
         {
             return new PageViewItem(this);
         }
